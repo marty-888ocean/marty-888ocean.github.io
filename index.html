@@ -1097,13 +1097,12 @@ body.bg-direct{transition:none;}
 }
 @media(max-width:960px){ .xst-grid{grid-template-columns:minmax(0,1fr);} .xst-txt{min-width:0;} }
 .xst-txt .x-body[data-lfit]{max-width:none;}
-.xv-row .x-body,#page-business .x-body{text-align:justify;text-justify:inter-character;}
-html[lang="en"] .xv-row .x-body,html[lang="en"] #page-business .x-body{text-align:left;}
-.x-body.jw{word-break:keep-all;overflow-wrap:anywhere;line-break:strict;text-wrap:wrap;}
+.x-body.jw,.ab-body.jw,.ls-lead.jw,.lpg-lead--ct.jw{word-break:keep-all;overflow-wrap:anywhere;line-break:strict;text-wrap:pretty;}
 html[lang="en"] .x-body.jw{word-break:normal;}
 @media(min-width:1024px){ .xtl--r1 .x-body .mfl{display:inline;} }
 @media(min-width:721px) and (max-width:1023px){ .xtl .x-body.jw{text-wrap:balance;} }
 .mm-links a{font-family:var(--sans);font-weight:800;font-stretch:84%;letter-spacing:.02em;text-transform:uppercase;font-size:2rem;line-height:1.1;}
+
 footer.ft{z-index:2;}
 .xwv{display:none !important;}
 
@@ -1635,6 +1634,18 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
   .xtl--r1 .xtl-y{font-size:2.4rem;}
 }
 
+
+/* r3c 2026-11-02：本文はどのセクションでも同じ大きさ・太さ・字間・行間（オーナー指示「セクションで変えるのは絶対NG」）
+   対象＝本文の段落。見出し・リード・引用・注記・カードの小見出しは役割が違うので対象外 */
+html .x-body,html .lv-p,html .la-p,html .lp-lead,html .lg-p,html .ot-lead,
+html .xtl--r1 .x-body,html #page-business .x-body,html .xst-txt .x-body,html .xv-row .x-body{
+  font-family:var(--jp);font-size:16px;font-weight:400;letter-spacing:.03em;line-height:1.95;}
+/* 行の指定（改行位置）は残すが、文字は縮めない。入りきらない幅では普通に折り返す */
+.x-body .fl,.x-body .mfl{white-space:normal;}
+@media(max-width:374px){ .xst-txt .x-body .fl{display:inline;} }
+.xtl--r1 .x-body{white-space:normal !important;}
+/* リード文も縮めない（行の指定は残し、入りきらなければ折り返す）。縮めてよいのは見出しだけ */
+.ls-lead .fl,.ab-body .fl,.lpg-lead--ct .fl{white-space:normal;}
 </style>
 </head>
 <body>
@@ -1764,7 +1775,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
     <div class="l-wrap">
       <p class="l-eyebrow l-eyebrow--c"><svg class="l-emb" viewBox="0 0 40 24" aria-hidden="true"><circle cx="20" cy="12" r="10.5"/><path d="M11 13.5c3-3 6-3 9 0s6 3 9 0"/></svg><span>Entrepreneur · Wakayama, Japan</span></p>
       <h2 class="ls-big" data-fill><span class="w">Live</span> <span class="w">a</span> <span class="w">life</span> <span class="w">you</span> <span class="w">will</span> <span class="w"><em>remember.</em></span> <span class="w">Every</span> <span class="w">day</span> <span class="w">is</span> <span class="w"><em>summer</em></span> <span class="w">vacation.</span> <span class="w">Create</span> <span class="w">a</span> <span class="w">life</span> <span class="w">without</span> <span class="w"><em>borders.</em></span></h2>
-      <p class="ls-lead" data-rv data-lfit data-ja="<span class='fl'>一度きりの<wbr>人生で<wbr>大切なのは、<wbr>肩書きでも<wbr>数字でもなく、誰と<wbr>どこで<wbr>どんな<wbr>時間を<wbr>過ごした。</span><span class='fl'>だからこそ常に<wbr>挑戦できる<wbr>場所に身を<wbr>置き、その<wbr>瞬間を<wbr>楽しみ切る<wbr>ことを<wbr>大事に<wbr>しています。</span>" data-en="<span class='fl'>What matters in a life you only live once isn&#39;t titles or numbers, it&#39;s who you spent your time with, where, and how.</span><span class='fl'>That&#39;s why I keep putting myself where I can take on challenges, and enjoy every moment to the fullest.</span>"><span class="fl">一度きりの<wbr>人生で<wbr>大切なのは、<wbr>肩書きでも<wbr>数字でもなく、誰と<wbr>どこで<wbr>どんな<wbr>時間を<wbr>過ごした。</span><span class="fl">だからこそ常に<wbr>挑戦できる<wbr>場所に身を<wbr>置き、その<wbr>瞬間を<wbr>楽しみ切る<wbr>ことを<wbr>大事に<wbr>しています。</span></p>
+      <p class="ls-lead" data-rv data-ja="<span class='fl'>一度きりの<wbr>人生で<wbr>大切なのは、<wbr>肩書きでも<wbr>数字でもなく、誰と<wbr>どこで<wbr>どんな<wbr>時間を<wbr>過ごした。</span><span class='fl'>だからこそ常に<wbr>挑戦できる<wbr>場所に身を<wbr>置き、その<wbr>瞬間を<wbr>楽しみ切る<wbr>ことを<wbr>大事に<wbr>しています。</span>" data-en="<span class='fl'>What matters in a life you only live once isn&#39;t titles or numbers, it&#39;s who you spent your time with, where, and how.</span><span class='fl'>That&#39;s why I keep putting myself where I can take on challenges, and enjoy every moment to the fullest.</span>"><span class="fl">一度きりの<wbr>人生で<wbr>大切なのは、<wbr>肩書きでも<wbr>数字でもなく、誰と<wbr>どこで<wbr>どんな<wbr>時間を<wbr>過ごした。</span><span class="fl">だからこそ常に<wbr>挑戦できる<wbr>場所に身を<wbr>置き、その<wbr>瞬間を<wbr>楽しみ切る<wbr>ことを<wbr>大事に<wbr>しています。</span></p>
     </div>
   </section>
 
@@ -1975,7 +1986,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
     <p class="l-eyebrow l-eyebrow--c"><span class="l-num">About Me</span><span>Born 1999 · Keio · London · Wakayama</span></p>
     <p class="ab-hello" data-ja="はじめまして、NOAHです。" data-en="Nice to meet you, I'm Noah.">はじめまして、NOAHです。</p>
     <h2 class="ab-motto" data-lfit data-ja="<span class='fl'><span class='q'>「毎日が人生の夏休み」</span></span><span class='fl'><span class='k'>がモットー。</span></span>" data-en="<span class='fl'><span class='k'>My motto:</span></span><span class='fl'><span class='q'>&ldquo;Every day is</span></span><span class='fl'><span class='q'>summer vacation.&rdquo;</span></span>"><span class="fl"><span class="q">「毎日が人生の夏休み」</span></span><span class="fl"><span class="k">がモットー。</span></span></h2>
-    <p class="ab-body" data-lfit data-ja="<span class='fl'>自分で人生の選択に責任を持ち、</span><span class='fl'>全力で毎日を楽しむことを大切にしています。</span>" data-en="<span class='fl'>I take responsibility for my own choices</span><span class='fl'>and enjoy every single day to the fullest.</span>"><span class="fl">自分で人生の選択に責任を持ち、</span><span class="fl">全力で毎日を楽しむことを大切にしています。</span></p>
+    <p class="ab-body" data-ja="<span class='fl'>自分で人生の選択に責任を持ち、</span><span class='fl'>全力で毎日を楽しむことを大切にしています。</span>" data-en="<span class='fl'>I take responsibility for my own choices</span><span class='fl'>and enjoy every single day to the fullest.</span>"><span class="fl">自分で人生の選択に責任を持ち、</span><span class="fl">全力で毎日を楽しむことを大切にしています。</span></p>
     <svg class="lpg-sig ab-sig" viewBox="24 16 468 216" aria-hidden="true"><use href="#sigN1"/><use href="#sigN2"/></svg>
   </section>
 
@@ -1983,7 +1994,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
     <div class="x-wrap xst-grid">
       <figure class="xst-fig x-clip" data-rv><div class="x-zoom"><img src="assets/portrait-amalfi.jpg" alt="Noah Yoshida" data-par></div></figure>
       <div class="xst-txt">
-        <p class="x-body" data-rv data-lfit data-ja="<span class='fl'>曽祖父が約70年前に創業した会社を継ぎ、</span><span class='fl'>体験ツアー・デザイン・イベントの3事業を<br class='sp-br'>立ち上げています。</span>" data-en="I took over the company my great-grandfather founded about seventy years ago, and I am building three ventures from it: tours, design and events."><span class="fl">曽祖父が約70年前に創業した会社を継ぎ、</span><span class="fl">体験ツアー・デザイン・イベントの3事業を<br class="sp-br">立ち上げています。</span></p>
+        <p class="x-body" data-rv data-ja="<span class='fl'>曽祖父が約70年前に創業した会社を継ぎ、</span><span class='fl'>体験ツアー・デザイン・イベントの3事業を<br class='sp-br'>立ち上げています。</span>" data-en="I took over the company my great-grandfather founded about seventy years ago, and I am building three ventures from it: tours, design and events."><span class="fl">曽祖父が約70年前に創業した会社を継ぎ、</span><span class="fl">体験ツアー・デザイン・イベントの3事業を<br class="sp-br">立ち上げています。</span></p>
         <p class="x-body" data-rv data-ja="和歌山を<wbr>拠点に、<wbr>イタリアや<wbr>ハワイのように<wbr>自然と<wbr>文化が<wbr>共存する<wbr>土地とも<wbr>行き来しながら、<wbr>場所に<wbr>とらわれない<wbr>働き方を<wbr>目指しています。" data-en="Based in Wakayama, I move between places where nature and culture live side by side, like Italy and Hawaii, working in a way that is not tied to one place.">和歌山を<wbr>拠点に、<wbr>イタリアや<wbr>ハワイのように<wbr>自然と<wbr>文化が<wbr>共存する<wbr>土地とも<wbr>行き来しながら、<wbr>場所に<wbr>とらわれない<wbr>働き方を<wbr>目指しています。</p>
       </div>
     </div>
@@ -2009,7 +2020,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
         <li class="xv-row" data-rv>
           <span class="xv-n">03</span>
           <div class="xv-h"><span class="xv-en">Adventure</span><span class="xv-ja">挑戦</span></div>
-          <p class="x-body" data-lfit data-ja="<span class='mfl'>ゼロから何かを立ち上げる瞬間が、いちばん面白い</span><span class='mfl'>と感じます。うまくいく保証がなくても、心が</span><span class='mfl'>わくわくする側を毎回選ぶようにしています。</span>" data-en="The moment something gets built out of nothing is the part I find most interesting. With no guarantee that it works, I still pick the side that excites me, every time."><span class="mfl">ゼロから何かを立ち上げる瞬間が、いちばん面白い</span><span class="mfl">と感じます。うまくいく保証がなくても、心が</span><span class="mfl">わくわくする側を毎回選ぶようにしています。</span></p>
+          <p class="x-body" data-ja="ゼロから何かを立ち上げる瞬間が、いちばん面白いと感じます。うまくいく保証がなくても、心がわくわくする側を毎回選ぶようにしています。" data-en="The moment something gets built out of nothing is the part I find most interesting. With no guarantee that it works, I still pick the side that excites me, every time.">ゼロから何かを立ち上げる瞬間が、いちばん面白いと感じます。うまくいく保証がなくても、心がわくわくする側を毎回選ぶようにしています。</p>
         </li>
         <li class="xv-row" data-rv>
           <span class="xv-n">04</span>
@@ -2026,11 +2037,11 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
         <p class="x-lbl" data-rv><span class="x-num">02</span><span>Career</span></p>
         <h2 class="x-h2 lm" data-rv data-ja="<span class='l'><span>ここまでの道のり。</span></span>" data-en="<span class='l'><span>The road so far.</span></span>"><span class="l"><span>ここまでの道のり。</span></span></h2>
       </div>
-      <ol class="xtl xtl--r1" data-nwfit>
+      <ol class="xtl xtl--r1">
         <li class="xtl-row" data-rv><span class="xtl-y">1999<small></small></span><span class="xtl-t">Born</span><p class="x-body" data-ja="兵庫県尼崎市に生まれる。幼少期はキッズモデルとして活動。" data-en="Born in Amagasaki, Hyogo. Worked as a kids model in early childhood.">兵庫県尼崎市に生まれる。幼少期はキッズモデルとして活動。</p></li>
         <li class="xtl-row" data-rv><span class="xtl-y">2006<small>–18</small></span><span class="xtl-t">Wakayama</span><p class="x-body" data-ja="和歌山県で小中高時代を過ごす。" data-en="Grew up through school years in Wakayama.">和歌山県で小中高時代を過ごす。</p></li>
         <li class="xtl-row" data-rv><span class="xtl-y">2018<small>–22</small></span><span class="xtl-t">Tokyo · Keio</span><p class="x-body" data-ja="慶應義塾大学 商学部に入学。マーケティング・マネジメントを学ぶ。" data-en="Enrolled at Keio University Faculty of Business. Studied marketing and management.">慶應義塾大学 商学部に入学。マーケティング・マネジメントを学ぶ。</p></li>
-        <li class="xtl-row" data-rv><span class="xtl-y">2022<small>–24</small></span><span class="xtl-t">London</span><p class="x-body" data-lfit data-ja="<span class='mfl'>イギリス大学院に進学。</span><span class='mfl'>在学中に当時ロンドン市内初のおにぎり専門店を起業。</span>" data-en="Graduate school in the UK. While studying, launched what was then the first dedicated onigiri shop in London."><span class="mfl">イギリス大学院に進学。</span><span class="mfl">在学中に当時ロンドン市内初のおにぎり専門店を起業。</span></p></li>
+        <li class="xtl-row" data-rv><span class="xtl-y">2022<small>–24</small></span><span class="xtl-t">London</span><p class="x-body" data-ja="<span class='mfl'>イギリス大学院に進学。</span><span class='mfl'>在学中に当時ロンドン市内初のおにぎり専門店を起業。</span>" data-en="Graduate school in the UK. While studying, launched what was then the first dedicated onigiri shop in London."><span class="mfl">イギリス大学院に進学。</span><span class="mfl">在学中に当時ロンドン市内初のおにぎり専門店を起業。</span></p></li>
         <li class="xtl-row" data-rv><span class="xtl-y">2024<small>–25</small></span><span class="xtl-t">Back to Tokyo</span><p class="x-body" data-ja="レバレジーズ株式会社に就職。SaaS新規事業の営業で契約ギネスを更新。" data-en="Joined Leverages. Broke the contract record in SaaS new business sales.">レバレジーズ株式会社に就職。SaaS新規事業の営業で契約ギネスを更新。</p></li>
         <li class="xtl-row is-now" data-rv><span class="xtl-y">2025<small>–</small></span><span class="xtl-t">New Challenge · Wakayama</span><p class="x-body" data-ja="地元・和歌山に戻って家業を継ぐ。ツアー・デザイン・イベントの3事業を立ち上げ中。" data-en="Returned to Wakayama and took over the family business. Building three ventures: tours, design and events.">地元・和歌山に戻って家業を継ぐ。ツアー・デザイン・イベントの3事業を立ち上げ中。</p></li>
       </ol>
@@ -2329,7 +2340,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
       <div class="lpg-left">
         <p class="lpg-meta"><span>Instagram</span><span>@noah.palmz</span></p>
         <p class="l-eyebrow">Contact</p>
-        <p class="lpg-lead lpg-lead--ct" data-lfit data-ja="<span class='fl'>お仕事のご相談、一緒に何か始めたいというお話、</span><span class='fl'>旅の話まで、どんなきっかけでも嬉しいです。</span><span class='fl'>お気軽にご連絡ください。</span>" data-en="<span class='fl'>Whether it&#39;s a work inquiry, an idea you&#39;d like to start together,</span><span class='fl'>or just a story from your travels, any reason to reach out is welcome.</span><span class='fl'>Feel free to get in touch.</span>"><span class="fl">お仕事のご相談、一緒に何か始めたいというお話、</span><span class="fl">旅の話まで、どんなきっかけでも嬉しいです。</span><span class="fl">お気軽にご連絡ください。</span></p>
+        <p class="lpg-lead lpg-lead--ct" data-ja="<span class='fl'>お仕事のご相談、一緒に何か始めたいというお話、</span><span class='fl'>旅の話まで、どんなきっかけでも嬉しいです。</span><span class='fl'>お気軽にご連絡ください。</span>" data-en="<span class='fl'>Whether it&#39;s a work inquiry, an idea you&#39;d like to start together,</span><span class='fl'>or just a story from your travels, any reason to reach out is welcome.</span><span class='fl'>Feel free to get in touch.</span>"><span class="fl">お仕事のご相談、一緒に何か始めたいというお話、</span><span class="fl">旅の話まで、どんなきっかけでも嬉しいです。</span><span class="fl">お気軽にご連絡ください。</span></p>
         <svg class="lpg-sig" viewBox="24 16 468 216" aria-hidden="true"><use href="#sigN1"/><use href="#sigN2"/></svg>
       </div>
       <figure class="lpg-fig lpg-fig--logo"><img src="assets/noah-palm-monogram.png" alt="Noah Yoshida — ヤシの木と N のモノグラム" width="558" height="610"><figcaption>Noah Yoshida · Wakayama</figcaption></figure>
@@ -3185,7 +3196,7 @@ function handleSubmit(e) {
   const prevLang = window.setLang;
   // ── 両端揃えの段落：改行できる位置を「単語の境目」だけにする（文節より細かく、単語の途中では切らない）
   //    日本語の単語分割はブラウザ標準の Intl.Segmenter。非対応ブラウザは何もしない（文節改行のまま）
-  const JW = '.xv-row .x-body,#page-business .x-body,.xtl .x-body,.xst-txt .x-body';
+  const JW = '.xv-row .x-body,#page-business .x-body,.xtl .x-body,.xst-txt .x-body,.ab-body,.ls-lead,.lpg-lead--ct';
   const seg = (window.Intl && Intl.Segmenter) ? new Intl.Segmenter('ja', { granularity:'word' }) : null;
   function jwrap(){
     if (!seg || document.documentElement.lang === 'en') return;
