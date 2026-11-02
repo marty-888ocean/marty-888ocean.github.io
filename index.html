@@ -1085,6 +1085,25 @@ body.bg-direct{transition:none;}
 .mm-foot{border-top-color:rgba(242,244,241,.18);}
 .mm-lang-btn{color:rgba(242,244,241,.78);border-color:rgba(242,244,241,.35);}
 .mm-lang-btn.active{background:var(--t);color:var(--ink);border-color:var(--t);}
+/* r3b 2026-11-02：改行指定（PC/スマホ別）＋ Values の右端揃え＋メニュー書体 */
+.mfl{display:inline;}
+.sp-br{display:none;}
+@media(max-width:720px){
+  .mfl{display:block;white-space:nowrap;}
+  .sp-br{display:inline;}
+  /* 行固定の段落で列が押し広げられないように（広がると縮小の計算が効かない） */
+  .xv .xv-row,.xtl--r1 .xtl-row{grid-template-columns:minmax(0,1fr);}
+  .xv-row .x-body,.xtl-row .x-body{min-width:0;}
+}
+@media(max-width:960px){ .xst-grid{grid-template-columns:minmax(0,1fr);} .xst-txt{min-width:0;} }
+.xst-txt .x-body[data-lfit]{max-width:none;}
+.xv-row .x-body,#page-business .x-body{text-align:justify;text-justify:inter-character;}
+html[lang="en"] .xv-row .x-body,html[lang="en"] #page-business .x-body{text-align:left;}
+.x-body.jw{word-break:keep-all;overflow-wrap:anywhere;line-break:strict;text-wrap:wrap;}
+html[lang="en"] .x-body.jw{word-break:normal;}
+@media(min-width:1024px){ .xtl--r1 .x-body .mfl{display:inline;} }
+@media(min-width:721px) and (max-width:1023px){ .xtl .x-body.jw{text-wrap:balance;} }
+.mm-links a{font-family:var(--sans);font-weight:800;font-stretch:84%;letter-spacing:.02em;text-transform:uppercase;font-size:2rem;line-height:1.1;}
 footer.ft{z-index:2;}
 .xwv{display:none !important;}
 
@@ -1964,7 +1983,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
     <div class="x-wrap xst-grid">
       <figure class="xst-fig x-clip" data-rv><div class="x-zoom"><img src="assets/portrait-amalfi.jpg" alt="Noah Yoshida" data-par></div></figure>
       <div class="xst-txt">
-        <p class="x-body" data-rv data-ja="曽祖父が<wbr>約70年前に<wbr>創業した<wbr>和歌山の<wbr>会社を<wbr>継ぎ、<wbr>体験ツアー・<wbr>デザイン・<wbr>イベントの<wbr>3事業を<wbr>立ち上げています。" data-en="I took over the Wakayama company my great-grandfather founded about seventy years ago, and I am building three ventures from it: tours, design and events.">曽祖父が<wbr>約70年前に<wbr>創業した<wbr>和歌山の<wbr>会社を<wbr>継ぎ、<wbr>体験ツアー・<wbr>デザイン・<wbr>イベントの<wbr>3事業を<wbr>立ち上げています。</p>
+        <p class="x-body" data-rv data-lfit data-ja="<span class='fl'>曽祖父が約70年前に創業した会社を継ぎ、</span><span class='fl'>体験ツアー・デザイン・イベントの3事業を<br class='sp-br'>立ち上げています。</span>" data-en="I took over the company my great-grandfather founded about seventy years ago, and I am building three ventures from it: tours, design and events."><span class="fl">曽祖父が約70年前に創業した会社を継ぎ、</span><span class="fl">体験ツアー・デザイン・イベントの3事業を<br class="sp-br">立ち上げています。</span></p>
         <p class="x-body" data-rv data-ja="和歌山を<wbr>拠点に、<wbr>イタリアや<wbr>ハワイのように<wbr>自然と<wbr>文化が<wbr>共存する<wbr>土地とも<wbr>行き来しながら、<wbr>場所に<wbr>とらわれない<wbr>働き方を<wbr>目指しています。" data-en="Based in Wakayama, I move between places where nature and culture live side by side, like Italy and Hawaii, working in a way that is not tied to one place.">和歌山を<wbr>拠点に、<wbr>イタリアや<wbr>ハワイのように<wbr>自然と<wbr>文化が<wbr>共存する<wbr>土地とも<wbr>行き来しながら、<wbr>場所に<wbr>とらわれない<wbr>働き方を<wbr>目指しています。</p>
       </div>
     </div>
@@ -1990,7 +2009,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
         <li class="xv-row" data-rv>
           <span class="xv-n">03</span>
           <div class="xv-h"><span class="xv-en">Adventure</span><span class="xv-ja">挑戦</span></div>
-          <p class="x-body" data-ja="ゼロから何かを立ち上げる瞬間が、いちばん<span class='nw'>面白いと感じます。</span>うまくいく保証がなくても、心がわくわくする側を毎回選ぶようにしています。" data-en="The moment something gets built out of nothing is the part I find most interesting. With no guarantee that it works, I still pick the side that excites me, every time.">ゼロから何かを立ち上げる瞬間が、いちばん<span class="nw">面白いと感じます。</span>うまくいく保証がなくても、心がわくわくする側を毎回選ぶようにしています。</p>
+          <p class="x-body" data-lfit data-ja="<span class='mfl'>ゼロから何かを立ち上げる瞬間が、いちばん面白い</span><span class='mfl'>と感じます。うまくいく保証がなくても、心が</span><span class='mfl'>わくわくする側を毎回選ぶようにしています。</span>" data-en="The moment something gets built out of nothing is the part I find most interesting. With no guarantee that it works, I still pick the side that excites me, every time."><span class="mfl">ゼロから何かを立ち上げる瞬間が、いちばん面白い</span><span class="mfl">と感じます。うまくいく保証がなくても、心が</span><span class="mfl">わくわくする側を毎回選ぶようにしています。</span></p>
         </li>
         <li class="xv-row" data-rv>
           <span class="xv-n">04</span>
@@ -2011,7 +2030,7 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
         <li class="xtl-row" data-rv><span class="xtl-y">1999<small></small></span><span class="xtl-t">Born</span><p class="x-body" data-ja="兵庫県尼崎市に生まれる。幼少期はキッズモデルとして活動。" data-en="Born in Amagasaki, Hyogo. Worked as a kids model in early childhood.">兵庫県尼崎市に生まれる。幼少期はキッズモデルとして活動。</p></li>
         <li class="xtl-row" data-rv><span class="xtl-y">2006<small>–18</small></span><span class="xtl-t">Wakayama</span><p class="x-body" data-ja="和歌山県で小中高時代を過ごす。" data-en="Grew up through school years in Wakayama.">和歌山県で小中高時代を過ごす。</p></li>
         <li class="xtl-row" data-rv><span class="xtl-y">2018<small>–22</small></span><span class="xtl-t">Tokyo · Keio</span><p class="x-body" data-ja="慶應義塾大学 商学部に入学。マーケティング・マネジメントを学ぶ。" data-en="Enrolled at Keio University Faculty of Business. Studied marketing and management.">慶應義塾大学 商学部に入学。マーケティング・マネジメントを学ぶ。</p></li>
-        <li class="xtl-row" data-rv><span class="xtl-y">2022<small>–24</small></span><span class="xtl-t">London</span><p class="x-body" data-ja="イギリス大学院に進学。在学中に<span class='nw'>「おにぎり屋」を起業。</span>" data-en="Graduate school in the UK. Launched an onigiri shop during studies.">イギリス大学院に進学。在学中に<span class="nw">「おにぎり屋」を起業。</span></p></li>
+        <li class="xtl-row" data-rv><span class="xtl-y">2022<small>–24</small></span><span class="xtl-t">London</span><p class="x-body" data-lfit data-ja="<span class='mfl'>イギリス大学院に進学。</span><span class='mfl'>在学中に当時ロンドン市内初のおにぎり専門店を起業。</span>" data-en="Graduate school in the UK. While studying, launched what was then the first dedicated onigiri shop in London."><span class="mfl">イギリス大学院に進学。</span><span class="mfl">在学中に当時ロンドン市内初のおにぎり専門店を起業。</span></p></li>
         <li class="xtl-row" data-rv><span class="xtl-y">2024<small>–25</small></span><span class="xtl-t">Back to Tokyo</span><p class="x-body" data-ja="レバレジーズ株式会社に就職。SaaS新規事業の営業で契約ギネスを更新。" data-en="Joined Leverages. Broke the contract record in SaaS new business sales.">レバレジーズ株式会社に就職。SaaS新規事業の営業で契約ギネスを更新。</p></li>
         <li class="xtl-row is-now" data-rv><span class="xtl-y">2025<small>–</small></span><span class="xtl-t">New Challenge · Wakayama</span><p class="x-body" data-ja="地元・和歌山に戻って家業を継ぐ。ツアー・デザイン・イベントの3事業を立ち上げ中。" data-en="Returned to Wakayama and took over the family business. Building three ventures: tours, design and events.">地元・和歌山に戻って家業を継ぐ。ツアー・デザイン・イベントの3事業を立ち上げ中。</p></li>
       </ol>
@@ -2068,49 +2087,49 @@ html[lang="en"] .ab-body{font-family:'Inter',var(--jp);line-height:1.5;letter-sp
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="13" aria-hidden="true"></div></div><figcaption class="xcd-gcap">Kimino · Wakayama</figcaption><div class="emb" data-emb="tour" data-ring="Experience Tour · Kimino · Wakayama" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">01</span><span class="xb-cat">Tour · Experience</span></div>
         <div class="xb-m"><h2 class="xb-name">Tour</h2><p class="xb-sub" data-ja="和歌山・紀美野町の体験ツアー" data-en="Experience Tours in Kimino, Wakayama">和歌山・紀美野町の体験ツアー</p><span class="x-status">2026 Autumn</span></div>
-        <div class="xb-r"><p class="x-body" data-ja="和歌山県紀美野町の山を舞台に、狩猟と天文台の星空と焚火を一晩でたどるツアーを設計しています。獣害という地域の課題を、来た人が体で分かる体験に変えたいと思っています。情報が絶えず流れ込んでくる日常から一度離れて、本来そなわっているはずの人間らしい感覚を取り戻す。そういうリトリートとしての時間を届けたいと考えています。" data-en="A tour set in the mountains of Kimino, Wakayama, moving through hunting, an observatory sky and fire across a single night. I want the region's problem with crop damage to become something a visitor understands with their body rather than from a panel. Step out of a day where information never stops arriving, and the plainly human senses come back. That is the retreat I want this time to be.">和歌山県紀美野町の山を舞台に、狩猟と天文台の星空と焚火を一晩でたどるツアーを設計しています。獣害という地域の課題を、来た人が体で分かる体験に変えたいと思っています。情報が絶えず流れ込んでくる日常から一度離れて、本来そなわっているはずの人間らしい感覚を取り戻す。そういうリトリートとしての時間を届けたいと考えています。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>和歌山県紀美野町</dd></div><div><dt data-ja="状況" data-en="Status">状況</dt><dd data-ja="2026年秋 開始予定" data-en="Launching Autumn 2026">2026年秋 開始予定</dd></div></dl><p class="xb-tags">Tour · Wakayama · Nature</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="和歌山県紀美野町の山を舞台に、狩猟と天文台の星空と焚火をたどるツアーを設計しています。獣害という地域の課題を、来た人が体で分かる体験に変えたいと思っています。情報が絶えず流れ込んでくる日常から一度離れて、本来そなわっているはずの人間らしい感覚を取り戻す。そういうリトリートとしての時間を届けたいと考えています。" data-en="A tour set in the mountains of Kimino, Wakayama, moving through hunting, an observatory sky and fire. I want the region's problem with crop damage to become something a visitor understands with their body rather than from a panel. Step out of a day where information never stops arriving, and the plainly human senses come back. That is the retreat I want this time to be.">和歌山県紀美野町の山を舞台に、狩猟と天文台の星空と焚火をたどるツアーを設計しています。獣害という地域の課題を、来た人が体で分かる体験に変えたいと思っています。情報が絶えず流れ込んでくる日常から一度離れて、本来そなわっているはずの人間らしい感覚を取り戻す。そういうリトリートとしての時間を届けたいと考えています。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>和歌山県紀美野町</dd></div></dl><p class="xb-tags">Tour · Wakayama · Nature</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="17" aria-hidden="true"></div></div><figcaption class="xcd-gcap">Creative · Design</figcaption><div class="emb" data-emb="design" data-ring="Creative · Design · Branding · Web" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">02</span><span class="xb-cat">Creative · Design</span></div>
         <div class="xb-m"><h2 class="xb-name">Design</h2><p class="xb-sub" data-ja="ブランド・クリエイティブ制作" data-en="Brand & Creative Production">ブランド・クリエイティブ制作</p><span class="x-status">Open</span></div>
-        <div class="xb-r"><p class="x-body" data-ja="サイト、ロゴ、名刺、ブランドガイドラインまでを一貫して作っています。見た目を整える前に、その事業が誰に何を売っているのかを聞き取るところから入るのが自分のやり方です。海外で身についた基準を、そのまま日本の案件に持ち込んでいます。" data-en="Sites, logos, business cards, brand guidelines — produced end to end. Before anything gets styled, I want to know who the business sells to and what it actually sells. The standard I built up abroad comes with me into the work here.">サイト、ロゴ、名刺、ブランドガイドラインまでを一貫して作っています。見た目を整える前に、その事業が誰に何を売っているのかを聞き取るところから入るのが自分のやり方です。海外で身についた基準を、そのまま日本の案件に持ち込んでいます。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>Creative</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="ディレクター" data-en="Director">ディレクター</dd></div></dl><p class="xb-tags">Branding · Web · Identity</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="サイト、ロゴ、名刺、ブランドガイドラインまで、一貫したデザインで制作しています。大切にしているのは、デザインに入る前にお客さまの事業や想いをしっかり伺うこと。海外で培った感性と基準を、日本の事業に合わせて形にしています。" data-en="Sites, logos, business cards and brand guidelines, designed as one consistent whole. What matters most to me is listening closely to the business and what drives it before any design begins. I bring the sense and standards I built abroad, shaped to fit businesses here in Japan.">サイト、ロゴ、名刺、ブランドガイドラインまで、一貫したデザインで制作しています。大切にしているのは、デザインに入る前にお客さまの事業や想いをしっかり伺うこと。海外で培った感性と基準を、日本の事業に合わせて形にしています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>Creative</dd></div></dl><p class="xb-tags">Branding · Web · Identity</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="23" aria-hidden="true"></div></div><figcaption class="xcd-gcap">Osaka · Wakayama</figcaption><div class="emb" data-emb="events" data-ring="Music · Food · Nights · Host &amp; DJ" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">03</span><span class="xb-cat">Events · Music</span></div>
         <div class="xb-m"><h2 class="xb-name">Events</h2><p class="xb-sub" data-ja="音楽と食のイベント" data-en="Music and Food Nights">音楽と食のイベント</p></div>
-        <div class="xb-r"><p class="x-body" data-ja="音楽と食を軸にした夜の集まりを企画しています。クルーザーでDJをしたり、同じ食卓を囲んだり。形はそのつど変わりますが、やりたいことは一つで、来た人どうしがその場でつながっていくコミュニティを育てることです。回を重ねるほど濃くなる場にしたいと思っています。" data-en="An evening series built around music and food — a DJ set on a cruiser, a shared table. The format shifts each time, but the aim does not: a community where the people in the room connect to each other, and which gets denser every time it runs.">音楽と食を軸にした夜の集まりを企画しています。クルーザーでDJをしたり、同じ食卓を囲んだり。形はそのつど変わりますが、やりたいことは一つで、来た人どうしがその場でつながっていくコミュニティを育てることです。回を重ねるほど濃くなる場にしたいと思っています。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>大阪・和歌山</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="主催・DJ" data-en="Host & DJ">主催・DJ</dd></div></dl><p class="xb-tags">DJ · Event · Osaka</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="音楽と食を軸にした夜の集まりを企画しています。クルーザーでDJをしたり、同じ食卓を囲んだり。形はそのつど変わりますが、やりたいことは一つで、来た人どうしがその場でつながっていくコミュニティを育てることです。回を重ねるほど濃くなる場にしたいと思っています。" data-en="An evening series built around music and food — a DJ set on a cruiser, a shared table. The format shifts each time, but the aim does not: a community where the people in the room connect to each other, and which gets denser every time it runs.">音楽と食を軸にした夜の集まりを企画しています。クルーザーでDJをしたり、同じ食卓を囲んだり。形はそのつど変わりますが、やりたいことは一つで、来た人どうしがその場でつながっていくコミュニティを育てることです。回を重ねるほど濃くなる場にしたいと思っています。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>大阪・和歌山</dd></div></dl><p class="xb-tags">DJ · Event · Osaka</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="41" aria-hidden="true"></div></div><figcaption class="xcd-gcap">Web3 · Long term</figcaption><div class="emb" data-emb="web3" data-ring="Investment · Web3 · Long Term" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">04</span><span class="xb-cat">Investment · Web3</span></div>
         <div class="xb-m"><h2 class="xb-name">Web3</h2><p class="xb-sub" data-ja="Web3プロジェクトへの<span class='nw'>投資・参画</span>" data-en="Investing and Building in Web3">Web3プロジェクトへの<span class="nw">投資・参画</span></p></div>
-        <div class="xb-r"><p class="x-body" data-ja="Web3のプロジェクトに、長い時間軸で資本と時間を置いています。インフラ、カルチャー、立ち上がったばかりのコミュニティ。短期の値動きを追うより、構造そのものが変わる側に賭けたいと思っています。" data-en="I put capital and time into Web3 projects on a long horizon — infrastructure, culture, communities that have only just formed. Rather than chase short-term price, I would rather be on the side where the structure itself changes.">Web3のプロジェクトに、長い時間軸で資本と時間を置いています。インフラ、カルチャー、立ち上がったばかりのコミュニティ。短期の値動きを追うより、構造そのものが変わる側に賭けたいと思っています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>Digital Assets</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="投資家" data-en="Investor">投資家</dd></div></dl><p class="xb-tags">Crypto · Long-Term · Community</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="Web3のプロジェクトに、長い時間軸で資本と時間を置いています。インフラ、カルチャー、立ち上がったばかりのコミュニティ。短期の値動きを追うより、構造そのものが変わる側に賭けたいと思っています。" data-en="I put capital and time into Web3 projects on a long horizon — infrastructure, culture, communities that have only just formed. Rather than chase short-term price, I would rather be on the side where the structure itself changes.">Web3のプロジェクトに、長い時間軸で資本と時間を置いています。インフラ、カルチャー、立ち上がったばかりのコミュニティ。短期の値動きを追うより、構造そのものが変わる側に賭けたいと思っています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>Digital Assets</dd></div></dl><p class="xb-tags">Crypto · Long-Term · Community</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="57" aria-hidden="true"></div></div><figcaption class="xcd-gcap">Wine · Long hold</figcaption><div class="emb" data-emb="wine" data-ring="Investment · Wine · Long Hold" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">05</span><span class="xb-cat">Investment · Wine</span></div>
         <div class="xb-m"><h2 class="xb-name">Wine</h2><p class="xb-sub" data-ja="ワイン投資" data-en="Wine Investment">ワイン投資</p></div>
-        <div class="xb-r"><p class="x-body" data-ja="ワインを資産として持っています。一本を囲む時間が好きだという個人的な理由から入って、いまは長く置くほど価値が動く対象として扱っています。好きなものと理屈が重なる場所は、判断がぶれにくいと思っています。" data-en="I hold wine as an asset. It started for a personal reason — I like the hours spent around a bottle — and it became something I treat as a holding that moves with time. Where what you love and what adds up overlap, decisions tend to stay steady.">ワインを資産として持っています。一本を囲む時間が好きだという個人的な理由から入って、いまは長く置くほど価値が動く対象として扱っています。好きなものと理屈が重なる場所は、判断がぶれにくいと思っています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>Alternative Assets</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="投資家" data-en="Investor">投資家</dd></div></dl><p class="xb-tags">Wine · Alternative · Long-Hold</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="ワインを資産として持っています。一本を囲む時間が好きだという個人的な理由から入って、いまは長く置くほど価値が動く対象として扱っています。好きなものと理屈が重なる場所は、判断がぶれにくいと思っています。" data-en="I hold wine as an asset. It started for a personal reason — I like the hours spent around a bottle — and it became something I treat as a holding that moves with time. Where what you love and what adds up overlap, decisions tend to stay steady.">ワインを資産として持っています。一本を囲む時間が好きだという個人的な理由から入って、いまは長く置くほど価値が動く対象として扱っています。好きなものと理屈が重なる場所は、判断がぶれにくいと思っています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>Alternative Assets</dd></div></dl><p class="xb-tags">Wine · Alternative · Long-Hold</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="29" aria-hidden="true"></div></div><figcaption class="xcd-gcap">Wakayama · 70 years</figcaption><div class="emb" data-emb="legacy" data-ring="Family Business · Wakayama · 70 Years" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">06</span><span class="xb-cat">Family Business</span></div>
         <div class="xb-m"><h2 class="xb-name">Legacy</h2><p class="xb-sub" data-ja="70年続いた家業を継ぐ" data-en="Taking Over a 70-Year-Old Business">70年続いた家業を継ぐ</p></div>
-        <div class="xb-r"><p class="x-body" data-ja="曽祖父が70年前に和歌山で創業した会社を、いま自分の代で引き継いでいます。<span class='nw'>積み上がった</span>信用と地元の関係を土台にして、事業の中身のほうを作り替えているところです。2027年に社名を変える予定です。" data-en="The company my great-grandfather founded in Wakayama seventy years ago has come to me. On top of the credit and the local relationships it spent decades earning, I am rebuilding what the company actually does. It takes a new name in 2027.">曽祖父が70年前に和歌山で創業した会社を、いま自分の代で引き継いでいます。<span class="nw">積み上がった</span>信用と地元の関係を土台にして、事業の中身のほうを作り替えているところです。2027年に社名を変える予定です。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>和歌山県</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="取締役" data-en="Director">取締役</dd></div></dl><p class="xb-tags">Legacy · Wakayama · Succession</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="曽祖父が70年前に和歌山で創業した会社を、いま自分の代で引き継いでいます。<span class='nw'>積み上がった</span>信用と地元の関係を土台にして、事業の中身のほうを作り替えているところです。2027年に社名を変える予定です。" data-en="The company my great-grandfather founded in Wakayama seventy years ago has come to me. On top of the credit and the local relationships it spent decades earning, I am rebuilding what the company actually does. It takes a new name in 2027.">曽祖父が70年前に和歌山で創業した会社を、いま自分の代で引き継いでいます。<span class="nw">積み上がった</span>信用と地元の関係を土台にして、事業の中身のほうを作り替えているところです。2027年に社名を変える予定です。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>和歌山県</dd></div></dl><p class="xb-tags">Legacy · Wakayama · Succession</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="61" aria-hidden="true"></div></div><figcaption class="xcd-gcap">London · 2022–2024</figcaption><div class="emb" data-emb="zen" data-ring="Zen Musubi. · London · 2022–2024" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">07</span><span class="xb-cat">Food · F&amp;B</span></div>
         <div class="xb-m"><h2 class="xb-name">ZEN MUSUBI.</h2><p class="xb-sub" data-ja="ロンドン発・おにぎりブランド" data-en="London Onigiri Brand">ロンドン発・おにぎりブランド</p><span class="x-status">2022 — 2024</span></div>
-        <div class="xb-r"><p class="x-body" data-ja="日本のソウルフードを手作りのまま届けたくて、異国の地で起業を決意しました。現地でのイベント出店やブランドとのタイアップを重ね、当時ロンドンで初となるおにぎり専門店の出店に至りました。" data-en="I wanted Japanese soul food to reach people still made by hand, and decided to start something of my own in a country that was not mine. Market stalls and collaborations with local brands built it up, and it became what was then London's first shop dedicated to onigiri.">日本のソウルフードを手作りのまま届けたくて、異国の地で起業を決意しました。現地でのイベント出店やブランドとのタイアップを重ね、当時ロンドンで初となるおにぎり専門店の出店に至りました。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>London, UK</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="創業者" data-en="Founder">創業者</dd></div></dl><p class="xb-tags">F&amp;B · Brand · London</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="日本のソウルフードを手作りのまま届けたくて、異国の地で起業を決意しました。現地でのイベント出店やブランドとのタイアップを重ね、当時ロンドンで初となるおにぎり専門店の出店に至りました。" data-en="I wanted Japanese soul food to reach people still made by hand, and decided to start something of my own in a country that was not mine. Market stalls and collaborations with local brands built it up, and it became what was then London's first shop dedicated to onigiri.">日本のソウルフードを手作りのまま届けたくて、異国の地で起業を決意しました。現地でのイベント出店やブランドとのタイアップを重ね、当時ロンドンで初となるおにぎり専門店の出店に至りました。</p><dl class="xb-meta"><div><dt data-ja="拠点" data-en="Location">拠点</dt><dd>London, UK</dd></div></dl><p class="xb-tags">F&amp;B · Brand · London</p></div>
       </article>
       <article class="xb-row" data-rv>
         <figure class="xb-fig xb-fig--emb x-clip" data-rv><div class="x-zoom"><div class="xtopo" data-topo="73" aria-hidden="true"></div></div><figcaption class="xcd-gcap">note · @azur_noah</figcaption><div class="emb" data-emb="writing" data-ring="Media · Writing · note · AI" aria-hidden="true"></div></figure>
         <div class="xb-l"><span class="xb-n">08</span><span class="xb-cat">Media · Writing</span></div>
         <div class="xb-m"><h2 class="xb-name">Writing</h2><p class="xb-sub" data-ja="noteでの発信" data-en="Writing on note">noteでの発信</p></div>
-        <div class="xb-r"><p class="x-body" data-ja="AIをどう使えば仕事が速くなるのか、実際に試したことをそのまま書いています。あわせて、日々の中で考えたことや感じたことも、飾らずに残しています。" data-en="I write about how to actually put AI to work and get things done faster, based on what I have tried myself. Alongside that, what I think and feel day to day, set down plainly.">AIをどう使えば仕事が速くなるのか、実際に試したことをそのまま書いています。あわせて、日々の中で考えたことや感じたことも、飾らずに残しています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>note @azur_noah</dd></div><div><dt data-ja="役割" data-en="Role">役割</dt><dd data-ja="執筆" data-en="Writer">執筆</dd></div></dl><p class="xb-tags">note · AI · Solo</p></div>
+        <div class="xb-r"><p class="x-body" data-ja="AIをどう使えば仕事が速くなるのか、実際に試したことをそのまま書いています。あわせて、日々の中で考えたことや感じたことも、飾らずに残しています。" data-en="I write about how to actually put AI to work and get things done faster, based on what I have tried myself. Alongside that, what I think and feel day to day, set down plainly.">AIをどう使えば仕事が速くなるのか、実際に試したことをそのまま書いています。あわせて、日々の中で考えたことや感じたことも、飾らずに残しています。</p><dl class="xb-meta"><div><dt data-ja="領域" data-en="Sector">領域</dt><dd>note @azur_noah</dd></div></dl><p class="xb-tags">note · AI · Solo</p></div>
       </article>
       </div>
     </div>
@@ -3094,7 +3113,8 @@ function handleSubmit(e) {
       const W = el.clientWidth;
       if (!W) return;
       let need = 0;
-      el.querySelectorAll('.fl,.ls-s').forEach(l => {
+      el.querySelectorAll('.fl,.ls-s,.mfl').forEach(l => {
+        if (l.classList.contains('mfl') && getComputedStyle(l).display !== 'block') return;
         const r = document.createRange(); r.selectNodeContents(l);
         need = Math.max(need, r.getBoundingClientRect().width);
       });
@@ -3163,11 +3183,64 @@ function handleSubmit(e) {
   const prevGoTo = window.goTo;
   window.goTo = function(page){ prevGoTo(page); if (page === 'about') abShow(); lfit(); };
   const prevLang = window.setLang;
-  window.setLang = function(lang){ prevLang(lang); lfit(); };
+  // ── 両端揃えの段落：改行できる位置を「単語の境目」だけにする（文節より細かく、単語の途中では切らない）
+  //    日本語の単語分割はブラウザ標準の Intl.Segmenter。非対応ブラウザは何もしない（文節改行のまま）
+  const JW = '.xv-row .x-body,#page-business .x-body,.xtl .x-body,.xst-txt .x-body';
+  const seg = (window.Intl && Intl.Segmenter) ? new Intl.Segmenter('ja', { granularity:'word' }) : null;
+  function jwrap(){
+    if (!seg || document.documentElement.lang === 'en') return;
+    document.querySelectorAll(JW).forEach(p => {
+      const w = document.createTreeWalker(p, NodeFilter.SHOW_TEXT), ns = [];
+      while (w.nextNode()) ns.push(w.currentNode);
+      ns.forEach(n => {
+        if (!/[぀-ヿ一-鿿]/.test(n.data)) return;
+        const f = document.createDocumentFragment(), parts = [...seg.segment(n.data)].map(s => s.segment);
+        // 数字の前後（70｜年）では切らない。カタカナ同士は、両側が3文字以上の語のときだけ切ってよい
+        // （ブランド｜ガイドライン は可、リ｜トリート のような分割ミスは不可）
+        const DG = /[0-9０-９]/, KA = /[゠-ヿ]+$/, KB = /^[゠-ヿ]+/;
+        parts.forEach((s, i) => {
+          f.appendChild(document.createTextNode(s));
+          const nx = parts[i + 1];
+          if (!nx) return;
+          const a = s.slice(-1), b = nx[0];
+          if (DG.test(a) || DG.test(b)) return;
+          const ka = (s.match(KA) || [''])[0].length, kb = (nx.match(KB) || [''])[0].length;
+          if (ka && kb && (ka < 3 || kb < 3)) return;
+          // 句読点・小さい文字・閉じ括弧の前、開き括弧の後では切らない
+          if (/^[、。，．！？」』）)・ーぁぃぅぇぉっゃゅょゎァィゥェォッャュョヮ]/.test(nx) || /[「『（(]$/.test(s)) return;
+          // 短いひらがな（助詞・「ます」「した」など）を行頭に送らない／「ま｜した」のような語尾の途中で切らない
+          const H = /^[ぁ-ゖ]+$/, KJ = /[一-鿿々]/, HB = /[ぁ-ゖ]/;
+          if (H.test(nx) && nx.length <= 1) return;
+          if (H.test(s) && H.test(nx) && s.length <= 1) return;
+          // ひらがな同士は「助詞の後」だけ切ってよい（してい｜ます、届け｜たくて、した｜いと を防ぐ）
+          //   「〜て｜います」「〜ている｜ところ」のような自然な区切りは可
+          if (HB.test(a) && HB.test(b) && !/^(こと|ところ|もの|とき|ほう|よう|ため|ほど|わけ|はず)/.test(nx)
+              && (!/[はがをにでともへやのばかね]/.test(a) || /^[またなれらせさんう]/.test(nx))) return;
+          // カタカナ語の直後の短い助詞（ガイドライン｜まで）を行頭に送らない
+          if (/[゠-ヿ]/.test(a) && H.test(nx) && nx.length <= 2) return;
+          // 漢字の直後のひらがな（送り仮名・助詞）／「的・性・化」／「立ち｜上がる」型の複合動詞では切らない
+          if (KJ.test(a) && HB.test(b)) return;
+          if (/^[的性化]/.test(nx)) return;
+          if (/^[一-鿿][ぁ-ゖ]$/.test(s) && KJ.test(b)) return;
+          // 何｜度、獣｜害 のような熟語の分割ミス：漢字同士はどちらかが1文字なら切らない
+          const ja = (s.match(/[一-鿿々]+$/) || [''])[0].length, jb = (nx.match(/^[一-鿿々]+/) || [''])[0].length;
+          if (ja && jb && (ja < 2 || jb < 2)) return;
+          // <wbr> は行固定（nowrap）の中でも改行されてしまうので、ゼロ幅スペースを使う
+          f.appendChild(document.createTextNode('​'));
+        });
+        n.replaceWith(f);
+      });
+      p.classList.add('jw');
+    });
+  }
+  jwrap();
+  window.setLang = function(lang){ prevLang(lang); jwrap(); lfit(); };
   let rz;
   addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { abLayout(); lfit(); }, 160); });
   lfit();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { lfit(); abLayout(); });
+  // 日本語フォントは文字ごとに後から読み込まれるので、読み込みが終わるたびに行の縮小を計算し直す
+  if (document.fonts && document.fonts.addEventListener) { let fz; document.fonts.addEventListener('loadingdone', () => { clearTimeout(fz); fz = setTimeout(lfit, 60); }); }
   window.__r1 = { lfit, abLayout, abShow };
 })();
 
